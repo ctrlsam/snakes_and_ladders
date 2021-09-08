@@ -14,6 +14,20 @@ class Board {
     this.ladders = ladders;
     
     generate();
+    
+    // Color tiles with snakes
+    for (Snake snake : snakes){
+      tiles[snake.getStart()].setColor(color(45, 154, 238));
+      tiles[snake.getEnd()].setColor(color(231, 52, 72));
+    }
+    
+    // Color tiles with ladders
+    for (Ladder ladder : ladders){
+      tiles[ladder.getStart()].setColor(color(246, 169, 0));
+      tiles[ladder.getEnd()].setColor(color(237, 190, 0));
+    }
+    
+    
   }
   
   /**
@@ -25,8 +39,10 @@ class Board {
     boolean left = false;
     
     for (int i = 0; i < tiles.length; i++){
+      int squareNum = tiles.length-1-i;
+      tiles[squareNum] = new Tile(squareNum+1, x, y);
       
-      if (i > 0 && i % 10 == 0){ // new row
+      if ((i+1) % 10 == 0){ // new row
         y += Tile.SIZE;
         left = !left;
       }
@@ -35,10 +51,6 @@ class Board {
         if (left) x -= Tile.SIZE;
         else x += Tile.SIZE;
       }
-      
-      int squareNum = tiles.length-1-i;
-      tiles[squareNum] = new Tile(squareNum+1, x, y);
-      
     }
   }
   

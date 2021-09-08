@@ -1,7 +1,8 @@
 class Tile {
   
-  public final static int SIZE = 65;
+  public final static int SIZE = 70;
   private int number;
+  private color tileColor;
   
   private int x;
   private int y;
@@ -10,6 +11,7 @@ class Tile {
     this.number = number;
     this.x = x;
     this.y = y;
+    tileColor = color(139, 190, 118);
   }
   
   /**
@@ -17,13 +19,18 @@ class Tile {
    **/
   public void draw(){
     // tile
-    fill(255, 255, 255);
+    fill(tileColor); // Greeny
     rect(x, y, SIZE, SIZE);
     
     // number text
-    fill(0, 0, 0);
-    text(number, x, y+SIZE);
+    fill(255, 255, 255); 
+    text(number, x+10, y+20);
   }
+  
+  /**
+   * Set tile color to an RGB value
+   **/
+  public void setColor(color tileColor){ this.tileColor = tileColor; }
   
   /**
    * Gets the index relative to the board

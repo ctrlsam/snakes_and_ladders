@@ -10,7 +10,7 @@ boolean gameWon = false;
 **/
 void setup(){
   surface.setTitle("Snakes and Ladders");
-  size(800, 800);
+  size(700, 700);
   frameRate(120);
   
   players = new ArrayList();
@@ -24,7 +24,7 @@ void setup(){
       new Snake(94, 74),
       new Snake(97, 78),
       new Snake(92, 72),
-      new Snake(59, 63),
+      new Snake(63, 59),
   };
   
   ladders = new Ladder[] {
