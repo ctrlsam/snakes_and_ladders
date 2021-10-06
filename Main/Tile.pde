@@ -23,6 +23,7 @@ class Tile {
     rect(x, y, SIZE, SIZE);
     
     // number text
+    textSize(11);
     fill(255, 255, 255); 
     text(number, x+10, y+20);
   }

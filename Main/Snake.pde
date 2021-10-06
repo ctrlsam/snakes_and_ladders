@@ -1,4 +1,4 @@
-class Snake extends Path{
+class Snake extends Path {
   
   private float freq;
   private float amp;
@@ -7,6 +7,12 @@ class Snake extends Path{
       super(start, end);
       freq = 1; // wiggle frequency
       amp = 20; // wiggle amplitude
+  }
+  
+  public Snake(PVector pos) {
+      this(
+          (int) Math.max(pos.x, pos.y),
+          (int) Math.min(pos.x, pos.y));
   }
   
   /**

@@ -7,6 +7,13 @@ class Ladder extends Path {
       super(start, end);
   }
   
+  public Ladder(PVector pos) {
+      this(
+        (int) Math.min(pos.x, pos.y),
+        (int) Math.max(pos.x, pos.y)
+      );
+  }
+  
   /**
    * Draw left and right side of ladder
    **/
@@ -17,9 +24,9 @@ class Ladder extends Path {
          b.y + offsetY);
          
     line(a.x - offsetX,
-          a.y - offsetY,
-          b.x - offsetX,
-          b.y - offsetY);
+         a.y - offsetY,
+         b.x - offsetX,
+         b.y - offsetY);
   }
   
   /**
@@ -39,6 +46,9 @@ class Ladder extends Path {
     }
   }
   
+  /**
+   * Draw ladder from one coordinate to another
+   **/
   public void draw(PVector a, PVector b){
     float dx = a.x - b.x;
     float dy = a.y - b.y;

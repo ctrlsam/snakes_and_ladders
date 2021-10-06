@@ -23,6 +23,7 @@ class Player {
    * Draw player on grid
    **/
   public void draw(int x, int y){
+    if (x == 0 && y == 0) return; // don't draw until their on screen
     fill(pieceColor);
     ellipse(x, y, SIZE, SIZE);
   }

@@ -13,7 +13,7 @@ class Board {
     this.snakes = snakes;
     this.ladders = ladders;
     
-    generate();
+    generate(); // create tiles
     
     // Color tiles with snakes
     for (Snake snake : snakes){
@@ -141,5 +141,5 @@ class Board {
    * If known, will return the game winner
    **/
   public Player getWinner() { return winner; }
-
+  
 }
